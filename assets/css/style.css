@@ -83,6 +83,7 @@ aside {
     font-size: 1.6rem;
     flex-direction: column;
     border-right: 2px solid var(--dark-cyan);
+    border-bottom: 2px solid var(--dark-cyan);
     background: url(../imgs/aside.jpg) no-repeat center center/cover;
 }
 aside h1 {
