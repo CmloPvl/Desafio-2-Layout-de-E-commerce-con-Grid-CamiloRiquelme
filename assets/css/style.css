@@ -1,0 +1,184 @@
+:root {
+  /* Tonos oscuros y principales */
+  --rich-black: #001219;       /* negro intenso, para fondos principales */
+  --midnight-green: #005f73;   /* verde oscuro, para headers o sidebar */
+  --dark-cyan: #0a9396;        /* azul verdoso, acentos o botones */
+
+  /* Tonos claros y suaves */
+  --tiffany-blue: #94d2bd;     /* azul suave, texto o iconos */
+  --vanilla: #e9d8a6;           /* crema, fondos claros o resaltados */
+
+  /* Tonos cálidos y acentos */
+  --gamboge: #ee9b00;           /* amarillo/naranja, botones y alertas */
+  --alloy-orange: #ca6702;      /* naranja intenso, acentos */
+  --rust: #bb3e03;              /* rojo oxidado, acentos importantes */
+  --rufous: #ae2012;            /* rojo profundo, detalles */
+  --auburn: #9b2226;            /* rojo oscuro, detalles y texto */
+
+  /* Ejemplo de gradientes */
+  --gradient-top: linear-gradient(0deg, #001219, #005f73, #0a9396, #94d2bd, #e9d8a6, #ee9b00, #ca6702, #bb3e03, #ae2012, #9b2226);
+  --gradient-right: linear-gradient(90deg, #001219, #005f73, #0a9396, #94d2bd, #e9d8a6, #ee9b00, #ca6702, #bb3e03, #ae2012, #9b2226);
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Grid básico del body */
+body {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "aside main main"
+    "footer footer footer";
+  grid-template-columns: 22rem 1fr; 
+  grid-template-rows: 8rem 3fr 2.5rem;
+  height: 100%;
+  background: linear-gradient(90deg, var(--rich-black), var(--midnight-green));
+}
+
+/* Header */
+header {
+  grid-area: header;
+  display: flex; /* logo a la izquierda */
+  background: linear-gradient(90deg, var(--rich-black), var(--midnight-green));
+  align-items: center;
+  border-bottom: 2px solid var(--dark-cyan);
+}
+
+
+.header-title {
+  font-family: 'Cinzel Decorative', sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, var(--dark-cyan), var(--tiffany-blue), var(--gamboge));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-left: 6rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+#logo {
+    width: 8.5rem;
+    height: 8.5rem;
+    margin-left: 5rem;
+    margin-right: 25rem;
+    
+}
+
+/* Aside */
+aside {
+    grid-area: aside;
+    background: linear-gradient(90deg, var(--rich-black), var(--midnight-green));
+    font-family: 'DM Serif Text', serif; 
+    font-style: italic;
+    display: flex;
+    font-size: 1.6rem;
+    flex-direction: column;
+    border-right: 2px solid var(--dark-cyan);
+    background: url(../imgs/aside.jpg) no-repeat center center/cover;
+}
+aside h1 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  color: var(--rufous);
+  font-size: 3.5rem;
+}
+aside ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 1.5rem;
+  gap: 7rem;
+  color: var(--gamboge);
+}
+
+.category-item {
+  display: flex;
+  gap: 6px;
+}
+.category-count {
+  color: var(--vanilla);
+}
+
+/* Main */  
+main {
+  grid-area: main;
+  background: linear-gradient(90deg, var(--rich-black), var(--midnight-green));
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  grid-template-rows: repeat(2, 1fr); /* 2 filas */
+  gap: 30px; /* espacio entre cards */
+  padding: 3rem; /* espacio interno */
+  place-items: center; /* centrar cards */
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--rich-black);
+  height: 30.5rem;
+  width: 22rem;
+  text-align: center;
+  gap: 0.8rem;
+  border: solid 3px var(--gamboge);
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 5 / 5;  /* todas tendrán la misma proporción */
+  object-fit: cover;
+}
+
+
+.titulo-card {
+  font-family: 'Merienda', sans-serif;
+  font-size: 1.1rem;
+  color: var(--vanilla);
+}
+
+.precio-card {
+  font-family: 'Merienda', sans-serif;
+  font-size: 1.2rem;
+  color: var(--gamboge);
+}
+
+.add-to-cart {
+  background-color: var(--auburn);
+  color: var(--vanilla);
+  border: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  font-family: 'Noto Sans Duployan', sans-serif;
+  font-size: 1rem;
+  border-top: solid 3px var(--gamboge);
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+  background: linear-gradient(90deg, var(--rich-black), var(--midnight-green));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;     /* Fondo oscuro */
+  color: var(--rust);              /* Texto blanco */
+  font-size: 1.25rem;
+  gap: 10px;
+  margin-top: 1rem;
+  font-family: 'DM Serif Text', sans-serif;
+}
+
