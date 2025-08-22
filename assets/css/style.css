@@ -120,7 +120,7 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
   grid-template-rows: repeat(2, 1fr); /* 2 filas */
-  gap: 30px; /* espacio entre cards */
+  gap: 20px; /* espacio entre cards */
   padding: 3rem; /* espacio interno */
   place-items: center; /* centrar cards */
 }
@@ -151,7 +151,7 @@ main {
 
 .precio-card {
   font-family: 'Merienda', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--gamboge);
 }
 
